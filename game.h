@@ -22,7 +22,6 @@ class Game : public QWidget
     void startGame();
     void pauseGame();
     void stopGame();
-    void checkMove();
     void checkCollision();
 
   private:

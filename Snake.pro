@@ -27,3 +27,6 @@ FORMS    +=
 DISTFILES += \
     food.png \
     snake.png
+
+RESOURCES += \
+    images.qrc
