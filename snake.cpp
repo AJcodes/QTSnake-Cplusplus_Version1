@@ -2,15 +2,15 @@
 #include <iostream>
 
 Snake::Snake(int x, int y, int growToSize): numQueuedSegments(growToSize) {
-    image = new QImage(":/images/snake.png");
+    image.load(":/images/snake.png");
     QRect head;
-    head = image->rect();
+    head = image.rect();
     head.moveTo(x, y);
     putSegmentAt(image, head, x, y);
 }
 
-void Snake::putSegmentAt(QImage *image, QRect rect, int x, int y) {
-    segments.push_front(Segment(*image, rect, x, y));
+void Snake::putSegmentAt(QImage image, QRect rect, int x, int y) {
+    segments.push_front(Segment(image, rect, x, y));
     if (numQueuedSegments > 0)
         --numQueuedSegments;
     else
@@ -27,7 +27,7 @@ Snake::~Snake() {
 
 void Snake::move() {
     QRect rect;
-    rect = image->rect();
+    rect = image.rect();
     int x = head().x;
     int y = head().y;
     switch (dir) {

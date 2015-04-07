@@ -31,10 +31,10 @@ class Snake
     };
     Direction dir;
     typedef std::list<Segment> SegmentList;
-    QImage *image;
+    QImage image;
     SegmentList segments;
     void move();
-    void putSegmentAt(QImage *image, QRect rect, int x, int y);
+    void putSegmentAt(QImage image, QRect rect, int x, int y);
     void growBy(unsigned int numSegments);
     const Segment & head() const {
         return segments.front();
